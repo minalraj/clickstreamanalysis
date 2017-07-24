@@ -28,15 +28,6 @@ public class UserClick {
         this.activity = activity;
     }
 
-    public void parseString(String csvStr) {
-        StringTokenizer st = new StringTokenizer(csvStr, ",");
-        userID = Integer.parseInt(st.nextToken());
-        userName= st.nextToken();
-        gender = st.nextToken();
-        geoLocation = st.nextToken();
-        age = Integer.parseInt(st.nextToken());
-    }
-
 
     public int getuserID() {
         return userID;

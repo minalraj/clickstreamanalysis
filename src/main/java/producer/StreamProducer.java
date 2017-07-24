@@ -1,6 +1,7 @@
 package producer;
 
 import clicks.UserClick;
+import clicks.UserClickGenerator;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -25,9 +26,6 @@ public class StreamProducer {
         }
 
         String topicName = argv[0];
-        in = new Scanner(System.in);
-        System.out.println("Enter message(type quit to exit)");
-
 
         //configuring producer
         Properties configProperties = new Properties();
@@ -38,19 +36,14 @@ public class StreamProducer {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        System.out.println("Provide input : ");
-        String line = in.nextLine();
-        while (!line.equals("exit")) {
-            UserClick  userclick = new UserClick();
-            userclick.parseString(line);
+        while (true) {
+            UserClick  userclick = UserClickGenerator.next();
             JsonNode jsonNode = objectMapper.valueToTree(userclick);
             ProducerRecord<String, JsonNode> rec = new ProducerRecord<String, JsonNode>(topicName, jsonNode);
             producer.send(rec);
-            System.out.println("Provide input : ");
-            line = in.nextLine();
         }
-        in.close();
-        producer.close();
+
+//        producer.close();
 
     }
 
