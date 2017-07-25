@@ -5,7 +5,6 @@ import clicks.UserClick;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import elasticsearch.ESClient;
 import elasticsearch.ESJavaClient;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -236,29 +235,6 @@ public class StreamConsumer
             } catch (UnknownHostException e) {
                 e.printStackTrace();
             }
-
-
-
-
-//            ObjectMapper objectMapper = new ObjectMapper();
-//
-//            System.out.println("======================================================");
-//            esClient.makePostRequest(objectMapper.valueToTree(userCountMap).toString());
-//            System.out.println("[" + time + "]User ID count : " + userCountMap);
-//
-//            esClient.makePostRequest(objectMapper.valueToTree(genderCountMap).toString());
-//            System.out.println("[" + time + "]Gender count : " + genderCountMap);
-//
-//            esClient.makePostRequest(objectMapper.valueToTree(geoLocCountMap).toString());
-//            System.out.println("[" + time + "]Geo count : " + geoLocCountMap);
-//
-//            esClient.makePostRequest(objectMapper.valueToTree(ageGrpCountMap).toString());
-//            System.out.println("[" + time + "]Age grp count : " + ageGrpCountMap);
-//
-//            Map<String, List<String>> statsMap = new HashMap<String, List<String>>();
-//            for (Map.Entry<Integer, Integer> entry : userCountMap.entrySet()) {
-//
-//            }
 
         }
     }
