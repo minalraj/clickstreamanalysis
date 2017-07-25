@@ -1,0 +1,72 @@
+PUT clicks
+{
+  "mappings": {
+    "stats": {
+      "properties": {
+        "geo":    { "type": "geo_point"  },
+        "users":     { "type": "integer"  },
+        "age":      { "type": "integer" },
+        "gender":      { "type": "text" },
+        "time":      { "type": "date" }
+      }
+    }
+  }
+}
+
+
+
+http://localhost:9200/clicks
+{
+  "mappings": {
+    "geostats": {
+      "properties": {
+        "geo":    { "type": "geo_point"  },
+        "geocount":     { "type": "integer"  },
+        "time":      { "type": "date" }
+      }
+    },
+    "genderstats": {
+      "properties": {
+        "gender":    { "type": "text"  },
+        "gendercount":     { "type": "integer"  },
+        "time":      { "type": "date" }
+      }
+    },
+    "agestats": {
+      "properties": {
+        "age":    { "type": "integer"  },
+        "agecount":     { "type": "integer"  },
+        "time":      { "type": "date" }
+      }
+    },
+    "userstats": {
+      "properties": {
+        "user":    { "type": "integer"  },
+        "usercount":     { "type": "integer"  },
+        "time":      { "type": "date" }
+      }
+    },
+    "activitystats": {
+          "properties": {
+            "activity":    { "type": "text"  },
+            "activitytype":    { "type": "text"  },
+            "activitycount":     { "type": "integer"  },
+            "time":      { "type": "date" }
+          }
+    }
+  }
+}
+
+
+
+{
+  {"geo": "35.67194277, 51.42434403",
+  "geocount":	"800"
+  },
+  { "geo": "4.596423563, -74.08334396",
+  "geocount":	"600"
+  },
+  { "geo": "21.19998374, 72.84003943",
+  "geocount":	"500"
+  }
+}
