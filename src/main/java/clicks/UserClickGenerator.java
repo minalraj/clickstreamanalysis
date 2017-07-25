@@ -2,6 +2,7 @@ package clicks;
 
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Utility to generate random user clicks.
@@ -17,11 +18,13 @@ public class UserClickGenerator {
     private static Random randomID = new Random();
     private static Random randomLocation = new Random();
     private static Random randomActivity = new Random();
+    private static Random randomClickDelay = new Random();
 
 
-    public static UserClick next() {
+    public static UserClick next() throws InterruptedException {
         int id = randomID.nextInt(1000) + 1001;
         String username = "user" + id;
+
         String gender = ((id % 2 == 0) || (id % 3 == 0) ? "male" : "female");
 
         int geoLocationIndex = randomLocation.nextInt(GeoLocations.locations.length);
@@ -33,10 +36,12 @@ public class UserClickGenerator {
 
         int age = (id % 45) + 15;
 
+        long sleepTime = randomClickDelay.nextInt(15000) + 500;
+        TimeUnit.MILLISECONDS.sleep(sleepTime);
         return new UserClick(id, username, gender, geoLocation, age, activity);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         for (int i = 0; i < 10000; i++) {
             System.out.println(UserClickGenerator.next());
         }
