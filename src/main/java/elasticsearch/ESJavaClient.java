@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by minal on 24/07/17.
+ * creating an elastic search java client
  */
 public class ESJavaClient {
     private TransportClient client;

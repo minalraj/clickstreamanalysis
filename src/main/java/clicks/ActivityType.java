@@ -1,7 +1,7 @@
 package clicks;
 
 /**
- * Created by minal on 20/07/17.
+ *Enum to list activity type
  */
 public enum ActivityType {
     CLICK,

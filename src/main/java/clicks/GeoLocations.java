@@ -1,7 +1,7 @@
 package clicks;
 
 /**
- * Created by minal on 22/07/17.
+ * Listing  random 200 geo locations
  */
 public class GeoLocations {
     public static final String[] locations = {

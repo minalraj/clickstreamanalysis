@@ -5,7 +5,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import java.util.StringTokenizer;
 
 /**
- * Created by minal on 20/07/17.
+ * Defining user attributes on the basis of which output graphs will be generated
  */
 public class UserClick {
     private int userID;
@@ -29,13 +29,9 @@ public class UserClick {
     }
 
 
-    public int getuserID() {
-        return userID;
-    }
+    public int getuserID() {return userID;}
 
-    public void setuserID(int userID) {
-        this.userID = userID;
-    }
+    public void setuserID(int userID) {this.userID = userID;}
 
     public String getUserName() {
         return userName;

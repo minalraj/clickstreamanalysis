@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by minal on 20/07/17.
+ * Listing together some of the  user activites on an online shopping
+ * website and categorizing their type
  */
 public enum Activity {
     ACCESSORIES(ActivityType.CLICK),
